@@ -21,7 +21,7 @@ namespace DemoConsoleApp
 
         public void StampaDettagli()
         {
-            Console.WriteLine($"Atleta: {Nome}, Sport: {Sport}, Età: {Eta}");
+            Console.WriteLine("Atleta: {Nome}, Sport: {Sport}, Età: {Eta}");
         }
     }
 
@@ -41,7 +41,7 @@ namespace DemoConsoleApp
 
         public void StampaDettagli()
         {
-            Console.WriteLine($"Dipendente: {Nome}, Posizione: {Posizione}, Stipendio: {Stipendio} EUR");
+            Console.WriteLine("Dipendente: {Nome}, Posizione: {Posizione}, Stipendio: {Stipendio} EUR");
         }
     }
 
@@ -61,7 +61,7 @@ namespace DemoConsoleApp
 
         public void StampaDettagli()
         {
-            Console.WriteLine($"Animale: {Nome}, Specie: {Specie}, Età: {Eta}");
+            Console.WriteLine("Animale: {Nome}, Specie: {Specie}, Età: {Eta}");
         }
     }
 
@@ -81,7 +81,7 @@ namespace DemoConsoleApp
 
         public void StampaDettagli()
         {
-            Console.WriteLine($"Veicolo: Marca: {Marca}, Modello: {Modello}, Anno: {Anno}");
+            Console.WriteLine("Veicolo: Marca: {Marca}, Modello: {Modello}, Anno: {Anno}");
         }
     }
 
