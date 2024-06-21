@@ -3,9 +3,15 @@ using System;
 
 class Program
 {
+    // Definizione dell'enum per il sesso
+    enum Sesso
+    {
+        M,
+        F
+    }
+
     static void Main()
     {
-        // Si richiede all'utente di inserire i suoi dati che vengono memorizzati nelle variabili
         Console.WriteLine("Inserisci il nome:");
         string? nome = Console.ReadLine();
 
@@ -18,13 +24,13 @@ class Program
         {
             Console.WriteLine("Formato data non valido. Riprova (dd/mm/yyyy):");
         }
-       
+
         Console.WriteLine("Inserisci il codice fiscale:");
         string? codiceFiscale = Console.ReadLine();
 
         Console.WriteLine("Inserisci il sesso (M/F):");
-        char sesso;
-        while (!char.TryParse(Console.ReadLine(), out sesso) || (sesso != 'M' && sesso != 'F'))
+        Sesso sesso;
+        while (!Enum.TryParse(Console.ReadLine().ToUpper(), out sesso) || (sesso != Sesso.M && sesso != Sesso.F))
         {
             Console.WriteLine("Inserisci un valore valido per il sesso (M/F):");
         }
@@ -39,14 +45,13 @@ class Program
             Console.WriteLine("Inserisci un valore valido per il reddito annuale:");
         }
 
-        // Crea un nuovo oggetto Contribuente con i dati inseriti dall'utente
-        // Utilizzo l'operatore null-coalescing (??) per garantire che le stringhe non siano null
+        // Creazione dell'oggetto Contribuente con i dati inseriti dall'utente
         Contribuente contribuente = new Contribuente(nome ?? string.Empty, cognome ?? string.Empty, dataNascita, codiceFiscale ?? string.Empty, sesso, comuneResidenza ?? string.Empty, redditoAnnuale);
 
-        // Calcola l'imposta da pagare utilizzando il metodo CalcolaImposta
+        // Calcolo dell'imposta utilizzando il metodo CalcolaImposta
         double imposta = contribuente.CalcolaImposta();
 
-        // Visualizza il risultato in console
+        // Visualizzazione dei risultati in console
         Console.WriteLine("==================================================");
         Console.WriteLine("CALCOLO DELL'IMPOSTA DA VERSARE:");
         Console.WriteLine($"Contribuente: {contribuente.Nome} {contribuente.Cognome},");
@@ -57,6 +62,4 @@ class Program
         Console.WriteLine($"IMPOSTA DA VERSARE: {imposta:N2}");
     }
 }
-
-
 
