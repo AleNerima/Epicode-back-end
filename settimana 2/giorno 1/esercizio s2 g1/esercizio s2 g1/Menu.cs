@@ -33,7 +33,7 @@ namespace ConsoleMenuApp
             Console.WriteLine("==============MENU==============");
             for (int i = 0; i < Items.Count; i++)
             {
-                Console.WriteLine($"{i + 1}:  {Items[i].Name} ({Items[i].Price:F2})");
+                Console.WriteLine($"{i + 1}:  {Items[i].Name} (€ {Items[i].Price:F2})");
             }
             Console.WriteLine("11: Stampa conto finale e conferma");
             Console.WriteLine("==============MENU==============");
@@ -58,7 +58,7 @@ namespace ConsoleMenuApp
             double total = 0;
             foreach (var item in SelectedItems)
             {
-                Console.WriteLine($"{item.Name} ({item.Price:F2})");
+                Console.WriteLine($"{item.Name} (€ {item.Price:F2})");
                 total += item.Price;
             }
             total += ServiceCharge;
@@ -69,6 +69,7 @@ namespace ConsoleMenuApp
 
         public void StartOrdering()
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             while (true)
             {
                 DisplayMenu();
