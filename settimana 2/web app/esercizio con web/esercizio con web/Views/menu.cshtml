@@ -1,0 +1,30 @@
+﻿@model RistoranteApp.Models.Menu
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Menu</title>
+</head>
+<body>
+    <h1>==============MENU==============</h1>
+    <form method="post" asp-action="AddItem">
+        <table>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.Name (€ @item.Price:F2)</td>
+                    <td>
+                        <button type="submit" name="itemId" value="@item.Id">Aggiungi</button>
+                    </td>
+                </tr>
+            }
+        </table>
+    </form>
+    <br />
+    <form method="get" asp-action="Receipt">
+        <button type="submit">Stampa conto finale e conferma</button>
+    </form>
+    <h1>==============MENU==============</h1>
+</body>
+</html>

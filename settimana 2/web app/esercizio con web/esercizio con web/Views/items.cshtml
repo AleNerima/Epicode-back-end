@@ -1,0 +1,24 @@
+﻿@model RistoranteApp.Models.Menu
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Conto</title>
+</head>
+<body>
+    <h1>=============CONTO==============</h1>
+    <table>
+        @foreach (var item in Model.SelectedItems)
+        {
+            <tr>
+                <td>@item.Name (€ @item.Price:F2)</td>
+            </tr>
+        }
+    </table>
+    <br />
+    <p>Servizio al tavolo (€ 3.00)</p>
+    <h2>Totale: € @ViewBag.Total:F2</h2>
+    <h1>================================</h1>
+</body>
+</html>
