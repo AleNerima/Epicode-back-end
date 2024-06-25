@@ -59,21 +59,21 @@ namespace CVConsoleApp
 
         public static void StampaDettagliCVSuSchermo(CV cv)
         {
-            Console.WriteLine("Informazioni Personali:");
+            Console.WriteLine("================Informazioni Personali==================");
             Console.WriteLine($"Nome: {cv.InformazioniPersonali.Nome}");
             Console.WriteLine($"Cognome: {cv.InformazioniPersonali.Cognome}");
             Console.WriteLine($"Telefono: {cv.InformazioniPersonali.Telefono}");
             Console.WriteLine($"Email: {cv.InformazioniPersonali.Email}");
-            Console.WriteLine();
+            Console.WriteLine("==================================");
 
-            Console.WriteLine("Studi Effettuati:");
+            Console.WriteLine("=================Studi Effettuati=================");
             Console.WriteLine($"Qualifica: {cv.StudiEffettuati.Qualifica}");
             Console.WriteLine($"Istituto: {cv.StudiEffettuati.Istituto}");
             Console.WriteLine($"Tipo: {cv.StudiEffettuati.Tipo}");
             Console.WriteLine($"Dal: {cv.StudiEffettuati.Dal.ToShortDateString()} Al: {cv.StudiEffettuati.Al.ToShortDateString()}");
-            Console.WriteLine();
+            Console.WriteLine("===================================================");
 
-            Console.WriteLine("Impieghi:");
+            Console.WriteLine("====================Impieghi========================");
             foreach (var exp in cv.Impieghi.Esperienze)
             {
                 Console.WriteLine($"Azienda: {exp.Azienda}");
@@ -81,7 +81,7 @@ namespace CVConsoleApp
                 Console.WriteLine($"Dal: {exp.Dal.ToShortDateString()} Al: {exp.Al.ToShortDateString()}");
                 Console.WriteLine($"Descrizione: {exp.Descrizione}");
                 Console.WriteLine($"Compiti: {exp.Compiti}");
-                Console.WriteLine();
+                Console.WriteLine("===============================================");
             }
         }
     }
