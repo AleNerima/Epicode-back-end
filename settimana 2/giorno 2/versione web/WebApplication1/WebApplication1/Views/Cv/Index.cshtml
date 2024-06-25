@@ -1,0 +1,26 @@
+﻿@model CVWebApp.Models.CV
+
+<h2>Informazioni Personali</h2>
+<p>Nome: @Model.InformazioniPersonali.Nome</p>
+<p>Cognome: @Model.InformazioniPersonali.Cognome</p>
+<p>Telefono: @Model.InformazioniPersonali.Telefono</p>
+<p>Email: @Model.InformazioniPersonali.Email</p>
+
+<h2>Studi Effettuati</h2>
+@foreach (var studi in Model.StudiEffettuati)
+{
+    <p>Qualifica: @studi.Qualifica</p>
+    <p>Istituto: @studi.Istituto</p>
+    <p>Tipo: @studi.Tipo</p>
+    <p>Dal: @studi.Dal.ToShortDateString() Al: @studi.Al.ToShortDateString()</p>
+}
+
+<h2>Esperienze Lavorative</h2>
+@foreach (var esperienza in Model.EsperienzeLavorative)
+{
+    <p>Azienda: @esperienza.Azienda</p>
+    <p>Job Title: @esperienza.JobTitle</p>
+    <p>Dal: @esperienza.Dal.ToShortDateString() Al: @esperienza.Al.ToShortDateString()</p>
+    <p>Descrizione: @esperienza.Descrizione</p>
+    <p>Compiti: @esperienza.Compiti</p>
+}
