@@ -35,10 +35,11 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-// Configura il routing per utilizzare i controller e le viste
+// Configura il routing per utilizzare i controller e le viste te lo devi ricordare o non vedi nulla 
 app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=CV}/{action=Index}/{id?}");  // Aggiungi questa linea
+    pattern: "{controller=CV}/{action=Index}/{id?}");  //aggiungi questa linea
+
 
 app.Run();
