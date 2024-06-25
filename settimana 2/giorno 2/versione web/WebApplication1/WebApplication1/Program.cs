@@ -41,5 +41,4 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=CV}/{action=Index}/{id?}");  //aggiungi questa linea
 
-
 app.Run();
