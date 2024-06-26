@@ -1,0 +1,31 @@
+﻿@model Cinema.Models.Biglietto
+@{
+    ViewBag.Title = "Vendere Biglietto";
+}
+
+<h2>Vendere Biglietto</h2>
+
+<form asp-action="Crea" method="post">
+    <div class="form-group">
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Cognome"></label>
+        <input asp-for="Cognome" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Sala"></label>
+        <select asp-for="Sala" class="form-control">
+            @foreach (var sala in ViewBag.Sale)
+            {
+                <option value="@sala.Nome">@sala.Nome</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Ridotto"></label>
+        <input asp-for="Ridotto" type="checkbox" class="form-check-input" />
+    </div>
+    <button type="submit" class="btn btn-primary">Vendere</button>
+</form>

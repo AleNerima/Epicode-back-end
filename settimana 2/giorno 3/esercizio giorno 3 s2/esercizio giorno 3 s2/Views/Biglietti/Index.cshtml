@@ -1,0 +1,27 @@
+﻿@model List<Cinema.Models.Sala>
+
+<h2>Stato Sale</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome Sala</th>
+            <th>Capienza Massima</th>
+            <th>Biglietti Venduti</th>
+            <th>Biglietti Ridotti Venduti</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sala in Model)
+        {
+            <tr>
+                <td>@sala.Nome</td>
+                <td>@sala.CapienzaMassima</td>
+                <td>@sala.BigliettiVenduti</td>
+                <td>@sala.BigliettiRidottiVenduti</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Biglietti/Crea" class="btn btn-primary">Vendere Biglietto</a>
