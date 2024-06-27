@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Stato delle Sale";
+    var sale = ViewBag.Sale as List<CinemaMultisala.Models.Sala>;
+}
+
+<h2>Stato delle Sale</h2>
+@foreach (var sala in sale)
+{
+    <div>
+        <h3>@sala.Nome</h3>
+        <p>Biglietti venduti: @sala.BigliettiVenduti / @sala.Capienza</p>
+        <p>Biglietti ridotti: @sala.BigliettiRidotti</p>
+    </div>
+}
+
+<a asp-action="Prenota" class="btn btn-primary">Prenota</a>
