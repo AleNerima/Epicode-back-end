@@ -1,0 +1,28 @@
+﻿@model ScarpeCo.Models.Product
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<h1 class="my-4">@Model.Name</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <img class="img-fluid" src="data:image/png;base64,@Model.CoverImageBase64" alt="@Model.Name" />
+    </div>
+    <div class="col-md-6">
+        <h3>Price: @Model.Price.ToString("C")</h3>
+        <p>@Model.Description</p>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <img class="img-fluid" src="data:image/png;base64,@Model.Image1Base64" alt="@Model.Name" />
+    </div>
+    <div class="col-md-6">
+        <img class="img-fluid" src="data:image/png;base64,@Model.Image2Base64" alt="@Model.Name" />
+    </div>
+</div>
+
+<a href="@Url.Action("Index", "Product")" class="btn btn-secondary mt-4">Back to Product List</a>

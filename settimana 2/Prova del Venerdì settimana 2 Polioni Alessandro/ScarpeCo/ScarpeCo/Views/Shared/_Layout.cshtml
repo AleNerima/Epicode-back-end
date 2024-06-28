@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ScarpeCo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="@Url.Action("Index", "Product")">ScarpeCo</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Product")">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Create", "Product")">Add Product</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main role="main" class="container">
+        @RenderBody()
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">&copy; 2024 - ScarpeCo</span>
+        </div>
+    </footer>  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
