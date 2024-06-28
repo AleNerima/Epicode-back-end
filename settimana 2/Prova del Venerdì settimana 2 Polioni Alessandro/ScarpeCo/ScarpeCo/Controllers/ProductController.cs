@@ -62,15 +62,19 @@ namespace ScarpeCo.Controllers
             }
             return View(product);
         }
-        //converto i file aggiunti in base64
+        //converto i file immagine aggiunti in base64
         private string ConvertToBase64(Microsoft.AspNetCore.Http.IFormFile file)
         {
+            // Utilizzo di MemoryStream per leggere i dati da IFormFile in un array di byte,
+            // necessario per la conversione in una rappresentazione Base64 tramite Convert.ToBase64String.
+
             using (var memoryStream = new MemoryStream())
             {
-                file.CopyTo(memoryStream);
-                var fileBytes = memoryStream.ToArray();
-                return Convert.ToBase64String(fileBytes);
+                file.CopyTo(memoryStream); // i dati vengono copiati da file a memoryStream.
+                var fileBytes = memoryStream.ToArray(); // si ottiene un array di byte dal memoryStream.
+                return Convert.ToBase64String(fileBytes); // viene convertito l'array di byte in Base64.
             }
         }
+
     }
 }
