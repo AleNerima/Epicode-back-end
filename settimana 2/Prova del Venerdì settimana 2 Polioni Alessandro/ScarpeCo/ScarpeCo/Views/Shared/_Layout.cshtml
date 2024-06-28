@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,13 +11,16 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="@Url.Action("Index", "Product")">ScarpeCo</a>
-            <div class="collapse navbar-collapse">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="@Url.Action("Index", "Product")">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="@Url.Action("Create", "Product")">Add Product</a>
+                        <a class="nav-link" href="@Url.Action("Create", "Product")">Aggiungi Prodotto</a>
                     </li>
                 </ul>
             </div>
@@ -30,8 +33,8 @@
         <div class="container">
             <span class="text-muted">&copy; 2024 - ScarpeCo</span>
         </div>
-    </footer>  
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    </footer> 
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>
