@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace ScarpeCo.Models
+﻿namespace ScarpeCo.Models
 {
     public static class ProductRepository
     {

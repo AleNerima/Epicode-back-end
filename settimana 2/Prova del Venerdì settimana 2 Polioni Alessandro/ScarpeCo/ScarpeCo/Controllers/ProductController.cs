@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ScarpeCo.Models;
-using System;
-using System.IO;
-using System.Linq;
+
 
 namespace ScarpeCo.Controllers
 {
