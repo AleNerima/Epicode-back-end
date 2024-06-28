@@ -4,25 +4,37 @@
     ViewData["Title"] = "Product Details";
 }
 
-<h1 class="my-4">@Model.Name</h1>
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-warning text-black">
+            <h1 class="my-3">@Model.Name</h1>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-fluid rounded" src="data:image/png;base64,@Model.CoverImageBase64" alt="@Model.Name" />
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-primary">Prezzo: @Model.Price.ToString("C")</h3>
+                    <p>Descrizione prodotto:</p>
+                    <p class="text-justify">@Model.Description</p>
+                </div>
+            </div>
 
-<div class="row">
-    <div class="col-md-6">
-        <img class="img-fluid" src="data:image/png;base64,@Model.CoverImageBase64" alt="@Model.Name" />
-    </div>
-    <div class="col-md-6">
-        <h3>Price: @Model.Price.ToString("C")</h3>
-        <p>@Model.Description</p>
+            <div class="row mt-4 border-top border-primary">
+                <div class="col-md-6 text-center">
+                    <img class="img-fluid rounded mb-3" src="data:image/png;base64,@Model.Image1Base64" alt="@Model.Name" />
+                </div>
+                <div class="col-md-6 text-center">
+                    <img class="img-fluid rounded" src="data:image/png;base64,@Model.Image2Base64" alt="@Model.Name" />
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <a href="@Url.Action("Index", "Product")" class="btn btn-secondary">Torna alla Lista Prodotti</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
-<div class="row mt-4">
-    <div class="col-md-6">
-        <img class="img-fluid" src="data:image/png;base64,@Model.Image1Base64" alt="@Model.Name" />
-    </div>
-    <div class="col-md-6">
-        <img class="img-fluid" src="data:image/png;base64,@Model.Image2Base64" alt="@Model.Name" />
-    </div>
-</div>
-
-<a href="@Url.Action("Index", "Product")" class="btn btn-secondary mt-4">Back to Product List</a>

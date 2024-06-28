@@ -36,9 +36,9 @@ namespace ScarpeCo.Controllers
         {
             return View();
         }
-
+        //gestisco il form di creazione dei prodotti che vengono aggiunti
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        
         public IActionResult Create(Product product)
         {
             if (ModelState.IsValid)
@@ -62,7 +62,7 @@ namespace ScarpeCo.Controllers
             }
             return View(product);
         }
-
+        //converto i file aggiunti in base64
         private string ConvertToBase64(Microsoft.AspNetCore.Http.IFormFile file)
         {
             using (var memoryStream = new MemoryStream())
